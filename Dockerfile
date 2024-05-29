@@ -18,6 +18,7 @@ ENV port 9625
 
 WORKDIR /bareos_exporter
 COPY --from=builder /git/bareos_exporter bareos_exporter
+RUN chmod +x bareos_exporter
 
 CMD ./bareos_exporter -port $port -endpoint $endpoint -u $mysql_username -h $mysql_server -P $mysql_port -p pw/auth
 EXPOSE $port
