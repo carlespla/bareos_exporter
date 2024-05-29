@@ -11,8 +11,10 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o bareos_exporter .
 FROM busybox:latest
 
 ENV mysql_port 3306
-ENV mysql_server 192.168.3.70
-ENV mysql_username monty
+#ENV mysql_server 192.168.3.70
+ENV mysql_server 127.0.0.1
+#ENV mysql_username monty
+ENV mysql_username root
 ENV endpoint /metrics
 ENV port 9625
 
