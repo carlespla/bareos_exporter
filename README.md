@@ -10,7 +10,7 @@
 2. **(optional)** [Overwrite](https://docs.docker.com/engine/reference/run/#env-environment-variables) default args using ENV variables
 3. Run docker image as follows
 ```bash
-docker run --name bareos_exporter -p 9625:9625 -v /your/password/file:/bareos_exporter/pw/auth -d carlespla/bareos_exporter:latest
+docker run --name bareos_exporter -p 9625:9625 -v /bareos_exporter/pw/auth:/bareos_exporter/pw/auth -d carlespla/bareos_exporter:latest
 ```
 ### Metrics
 
