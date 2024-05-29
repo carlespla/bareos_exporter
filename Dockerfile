@@ -18,12 +18,9 @@ ENV port 9625
 
 WORKDIR /bareos_exporter
 COPY --from=builder /git/bareos_exporter bareos_exporter
-RUN chmod +x bareos_exporter
-
-# Mostrar els permisos del directori /bareos_exporter
-RUN ls -alh /bareos_exporter
+RUN chmod +x /bareos_exporter/bareos_exporter/bareos_exporter
 
 # Comanda per defecte que mostrarà els permisos i després executarà l'aplicació
-CMD ls -alh /bareos_exporter/bareos_exporter 
-#CMD ./bareos_exporter -port $port -endpoint $endpoint -u $mysql_username -h $mysql_server -P $mysql_port -p pw/auth
+#CMD ls -alh /bareos_exporter/bareos_exporter 
+CMD ./bareos_exporter -port $port -endpoint $endpoint -u $mysql_username -h $mysql_server -P $mysql_port -p pw/auth
 EXPOSE $port
