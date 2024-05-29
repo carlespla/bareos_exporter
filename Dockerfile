@@ -24,6 +24,6 @@ RUN chmod +x bareos_exporter
 RUN ls -alh /bareos_exporter
 
 # Comanda per defecte que mostrarà els permisos i després executarà l'aplicació
-CMD ls -alh /bareos_exporter 
+CMD ls -alh /bareos_exporter/bareos_exporter 
 #CMD ./bareos_exporter -port $port -endpoint $endpoint -u $mysql_username -h $mysql_server -P $mysql_port -p pw/auth
 EXPOSE $port
