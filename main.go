@@ -47,7 +47,7 @@ func main() {
 	prometheus.MustRegister(collector)
 
 	http.Handle(*exporterEndpoint, promhttp.Handler())
-	log.Info("Beginning to serve on port ", *exporterPort)
+	log.Info("Beginning to server on port ", *exporterPort)
 
 	addr := fmt.Sprintf(":%d", *exporterPort)
 	log.Fatal(http.ListenAndServe(addr, nil))
