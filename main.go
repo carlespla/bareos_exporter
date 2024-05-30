@@ -41,9 +41,9 @@ func main() {
 	error.Check(err)
 
 	connectionString = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", *mysqlUser, strings.TrimSpace(string(pass)), *mysqlHostname, *mysqlPort, *mysqlDb)
-	log.Info(connectionString)
+	log.Info("connectionString ", connectionString)
 	collector := bareosCollector()
-	log.Info(collector)
+	log.Info("collector ", collector)
 	prometheus.MustRegister(collector)
 
 	http.Handle(*exporterEndpoint, promhttp.Handler())
