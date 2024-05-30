@@ -41,7 +41,7 @@ func main() {
 	error.Check(err)
 
 	connectionString = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", *mysqlUser, strings.TrimSpace(string(pass)), *mysqlHostname, *mysqlPort, *mysqlDb)
-	log.Info("Init ", *connectionString)
+	log.Info("Init ", connectionString)
 	collector := bareosCollector()
 	log.Info("Init2 ", *collector)
 	prometheus.MustRegister(collector)
